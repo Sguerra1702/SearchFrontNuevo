@@ -14,7 +14,7 @@
 * Datos del libro (titulo, autor, categoria, codigo, ISBN, palabras clave, codigos de identificación)
 
 # Funcionalidades
-* Consultar por uno o mas parametros sobre materia bibliografico
+* Consultar por uno o mas parametros sobre material bibliografico
 
 
 ## Integrantes: 
