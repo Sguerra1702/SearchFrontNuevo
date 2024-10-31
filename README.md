@@ -1,3 +1,5 @@
+![OIP](https://github.com/user-attachments/assets/401abf5d-274c-44da-b45f-cd25774f586e)
+
 # SearchFront
 
 ## Junto con un esqueleto base, se busca implementar una interfaz gráfica básica para validar comportamientos oportunos del módulo de busqueda para el proyecto.
