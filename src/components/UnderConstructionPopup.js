@@ -1,12 +1,14 @@
 import React from 'react';
 
+import '../App.css';
+
 const UnderConstructionPopup = ({ onClose }) => (
-  <div className="popup">
-    <div className="popup-content">
-      <p>Esta funcionalidad está en construcción y no se puede usar actualmente.</p>
-      <button onClick={onClose}>Ok</button>
+    <div className="popup-overlay">
+      <div className="popup">
+        <p>Esta funcionalidad está en construcción</p>
+        <button onClick={onClose}>Ok</button>
+      </div>
     </div>
-  </div>
-);
+  );
 
 export default UnderConstructionPopup;

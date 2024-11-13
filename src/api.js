@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_BASE_URL = 'http://localhost:8080/search';
+const API_BASE_URL = 'http://localhost:8093/search';
 
 export const searchByParam = async (param, type) => {
   try {

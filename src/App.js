@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import MainSearch from './components/MainSearch';
 import SearchResults from './components/SearchResults';
 import NoResultsPopup from './components/NoResultsPopup';
+import './App.css';
 
 function App() {
   return (

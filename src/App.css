@@ -1,38 +1,107 @@
-.App {
+/* Importa la fuente Open Sans */
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+
+/* Estilos de la página */
+body {
+  background-color: #f2f2f2;
+  font-family: 'Open Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+h1 {
+  text-align: center;
+  color: #333;
+}
+
+.wrap {
+  width: 40%;
+  position: relative;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.search {
   display: flex;
-  flex-direction: column;
+  align-items: center;
+  margin-top: 20px; /* Espacio entre los elementos */
+}
+
+.search-select,
+.search-input,
+.search-button {
+  height: 50px; /* Altura uniforme para todos los elementos */
+  font-size: 16px;
+  border-radius: 5px;
+  outline: none;
+  margin-right: 10px;
+  box-sizing: border-box;
+}
+
+.search-select {
+  width: 225px;
+  padding: 0 10px;
+  border: 2px solid #00B4CC;
+  color: #9DBFAF;
+  appearance: none;
+}
+
+.search-input { 
+  width: 600px;/* Expande la caja de texto para ocupar más espacio */
+  padding: 0 10px;
+  border: 2px solid #00B4CC;
+  color: #9DBFAF;
+}
+
+.search-button {
+  width: 100px;
+  background-color: #00B4CC;
+  color: white;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+}
+
+
+
+button.complete, button.delete {
+  border: none;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  font-size: 14px;
+}
+
+button.complete {
+  background-color: #28a745;
+}
+
+button.delete {
+  background-color: #dc3545;
+}
+
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  z-index: 1000;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.popup {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: center;
+  width: 80%;
+  max-width: 400px;
 }
