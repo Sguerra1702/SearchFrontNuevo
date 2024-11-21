@@ -13,3 +13,20 @@ export const searchByParam = async (param, type) => {
     return [];
   }
 };
+
+
+export const searchByCode = async (id) => {
+  try {
+    console.log('code', id);
+    const response = await axios.get(`${API_BASE_URL}/id`, {
+      params: { id }
+      
+    });
+    console.log('response', response);
+    return response.data;
+  } catch (error) {
+    console.log('error', error);
+    console.error('Error en la búsqueda:', error);
+    return [];
+  }
+}

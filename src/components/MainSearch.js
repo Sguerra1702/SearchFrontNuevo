@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import SearchingPopup from './SearchingPopup';
 import UnderConstructionPopup from './UnderConstructionPopup';
-import { searchByParam } from '../api';
+import { searchByCode, searchByParam } from '../api';
 import { useNavigate } from 'react-router-dom';
 import '../App.css';
 
@@ -13,11 +13,20 @@ const MainSearch = () => {
   const navigate = useNavigate();
 
   const handleSearch = async () => {
-    if (['id', 'title', 'author', 'category', 'isbn'].includes(searchType)) {
+    if (searchType === 'code') {
+      setShowUnderConstructionPopup(true);
+    } else if (['id', 'title', 'author', 'category', 'isbn'].includes(searchType)) {
       setShowSearchingPopup(true);
 
       setTimeout(async () => {
-        const results = await searchByParam(searchParam, searchType);
+        let results = [];
+        if (searchType === 'id') {
+          const result = await searchByCode(searchParam);
+          results = result ? [result] : []; // Convierte el objeto en un array si no es nulo
+        } else {
+          results = await searchByParam(searchParam, searchType);
+        }
+
         setShowSearchingPopup(false);
 
         if (results.length > 0) {
@@ -28,13 +37,12 @@ const MainSearch = () => {
       }, 3000);
     }
   };
+  
 
-  // Manejador de cambios en el menú desplegable
   const handleSelectChange = (e) => {
     const selectedType = e.target.value;
     setSearchType(selectedType);
 
-    // Mostrar pop-up de "En construcción" si selecciona "Código QR"
     if (selectedType === 'code') {
       setShowUnderConstructionPopup(true);
     }
