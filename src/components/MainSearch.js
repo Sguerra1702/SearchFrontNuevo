@@ -22,7 +22,7 @@ const MainSearch = () => {
         let results = [];
         if (searchType === 'id') {
           const result = await searchByCode(searchParam);
-          results = result ? [result] : []; // Convierte el objeto en un array si no es nulo
+          results = result ? [result] : []; //"si ves esto" 
         } else {
           results = await searchByParam(searchParam, searchType);
         }
